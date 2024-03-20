@@ -1,0 +1,36 @@
+By React -
+npx create-react-app filename
+npm run start
+
+By Vite -
+npm create vite@latest
+npm run dev
+
+Virtual DOM & Reconciliation -
+The Virtual DOM (Document Object Model) is a concept used primarily in web development frameworks like React.js. It's an abstract representation of the actual DOM in memory.
+
+When changes are made to the user interface in a web application built with frameworks like React, Vue.js, or Angular, these frameworks don't directly manipulate the real DOM. Instead, they operate on a lightweight copy of the DOM known as the Virtual DOM.
+
+When a change is made, the framework first updates the Virtual DOM with the new state of the application. Then, it compares this updated Virtual DOM with the previous version (before the change). This process is called "reconciliation." By doing this comparison, the framework can identify exactly what changed in the Virtual DOM.
+
+After identifying the differences, the framework calculates the most efficient way to update the real DOM to reflect these changes. This might involve updating only specific parts of the DOM rather than re-rendering the entire DOM, which can be much more efficient and faster, especially in complex web applications.
+
+The use of a Virtual DOM helps improve the performance of web applications by minimizing the number of direct manipulations to the actual DOM, which can be slow and resource-intensive. It's a key optimization technique used in modern web development frameworks to provide a smoother and more responsive user experience.
+
+
+Fiber -
+In React, "Fiber" refers to a reimplementation of the core algorithm responsible for handling the rendering and updating of components in the framework. It was introduced in React version 16.
+
+The term "Fiber" comes from the idea of using a fiber data structure to represent each unit of work that needs to be performed during the rendering process. The Fiber architecture allows React to prioritize, schedule, and interrupt the rendering process more efficiently, enabling features like asynchronous rendering, better support for concurrent mode, and improved performance overall.
+
+Key features and benefits of the Fiber architecture include:
+
+1. **Incremental rendering**: Instead of performing all the work in one go, React can break the rendering process into smaller units (fibers) and work on them incrementally. This allows React to prioritize updates, making the user interface more responsive.
+
+2. **Better support for asynchronous rendering**: Fiber enables React to pause and resume rendering work, which is crucial for implementing features like suspense and lazy loading. Asynchronous rendering helps to prevent blocking the main thread, improving the perceived performance of the application.
+
+3. **Concurrent mode**: Fiber lays the groundwork for concurrent mode in React, which allows the framework to render different parts of the application at varying priorities. This is particularly useful for building highly responsive user interfaces, such as those found in real-time applications or interactive experiences.
+
+4. **Improved error handling and debugging**: The Fiber architecture enhances React's ability to track component lifecycles, detect errors, and provide better error messages. This makes it easier for developers to diagnose and fix issues in their applications.
+
+Overall, Fiber represents a significant advancement in the internal workings of React, enabling better performance, more responsive user interfaces, and enhanced developer tools for building modern web applications.
